@@ -1,0 +1,15 @@
+services:
+  chroma:
+    image: chromadb/chroma:latest
+    container_name: ai-company-memory
+
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - chroma-memory:/data
+
+    restart: unless-stopped
+
+volumes:
+  chroma-memory:
